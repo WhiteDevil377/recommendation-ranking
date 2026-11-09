@@ -97,5 +97,3 @@ Useful extensions include a genuine global-time deployment split, feedback updat
 - Harper and Konstan (2015), [The MovieLens Datasets: History and Context](https://doi.org/10.1145/2827872).
 - [GroupLens dataset usage conditions](https://files.grouplens.org/datasets/movielens/ml-1m-README.txt). This repository is a research prototype; users obtain the data from GroupLens under its conditions. No source data is redistributed or GroupLens endorsement implied.
 - Hu, Koren, and Volinsky (2008), [Collaborative Filtering for Implicit Feedback Datasets](https://yifanhu.net/PUB/cf.pdf).
-
-This prototype was developed with AI assistance. It implements established methods and reports measured results with the limitations above.
