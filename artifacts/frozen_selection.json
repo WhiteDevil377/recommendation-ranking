@@ -1,0 +1,4 @@
+{
+  "selected_model": "item_knn_50",
+  "criterion": "validation mean nDCG@10"
+}

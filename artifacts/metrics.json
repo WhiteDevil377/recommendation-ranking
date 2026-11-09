@@ -1,0 +1,210 @@
+{
+  "data": {
+    "source_url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
+    "archive_sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+    "raw_ratings": 1000209,
+    "users": 6040,
+    "catalogue_items": 3883,
+    "rated_items": 3706,
+    "positive_threshold": 4,
+    "training_positive_events": 458078,
+    "training_seen_events": 766208,
+    "evaluated_users": 5034,
+    "users_excluded_from_ranking": 1006,
+    "validation_positive_events": 56372,
+    "test_positive_events": 60831,
+    "cold_item_validation_events": 35,
+    "cold_item_test_events": 66,
+    "train_supported_items": 3457,
+    "split": "Per-user positive timestamp 80/90 percentiles; ties assigned to the later block.",
+    "eligibility": "At least 20 positives and nonempty strict train/validation/test blocks, with >=5 training positives.",
+    "training_policy": "Ineligible users contribute all their positive feedback; eligible users contribute feedback before their validation cutoff.",
+    "limitation": "This is a transductive per-user temporal benchmark, not a global chronological deployment simulation."
+  },
+  "selected_model": "item_knn_50",
+  "validation": {
+    "popularity": {
+      "ndcg_at_10": 0.06790229401615987,
+      "recall_at_10": 0.05358549132982308,
+      "mrr_at_10": 0.1343126265206122,
+      "catalogue_coverage": 0.029873808910636106
+    },
+    "item_knn_50": {
+      "ndcg_at_10": 0.08995830724500387,
+      "recall_at_10": 0.07529072943363482,
+      "mrr_at_10": 0.1741287026000971,
+      "catalogue_coverage": 0.07339685809940767
+    },
+    "item_knn_100": {
+      "ndcg_at_10": 0.08812974800664108,
+      "recall_at_10": 0.07354304663931738,
+      "mrr_at_10": 0.16994335345050485,
+      "catalogue_coverage": 0.06618593870718517
+    },
+    "als_32_alpha20": {
+      "ndcg_at_10": 0.07687518161393332,
+      "recall_at_10": 0.07529623706207167,
+      "mrr_at_10": 0.14704611814266164,
+      "catalogue_coverage": 0.3443214009786248
+    },
+    "als_64_alpha20": {
+      "ndcg_at_10": 0.07831813682661026,
+      "recall_at_10": 0.07999679415073267,
+      "mrr_at_10": 0.15017870543794262,
+      "catalogue_coverage": 0.37393767705382436
+    },
+    "als_64_alpha40": {
+      "ndcg_at_10": 0.06964872210826005,
+      "recall_at_10": 0.07310156531163348,
+      "mrr_at_10": 0.13337369380277606,
+      "catalogue_coverage": 0.41205253669842906
+    }
+  },
+  "test": {
+    "popularity": {
+      "ndcg_at_10": 0.056910180666687286,
+      "recall_at_10": 0.043406728460953364,
+      "mrr_at_10": 0.11983078557869978,
+      "catalogue_coverage": 0.029873808910636106
+    },
+    "item_knn_50": {
+      "ndcg_at_10": 0.06918888972557734,
+      "recall_at_10": 0.05617109095201443,
+      "mrr_at_10": 0.14153147485984197,
+      "catalogue_coverage": 0.07339685809940767
+    },
+    "item_knn_100": {
+      "ndcg_at_10": 0.06894605773315114,
+      "recall_at_10": 0.055625171595602055,
+      "mrr_at_10": 0.14081192336555864,
+      "catalogue_coverage": 0.06618593870718517
+    },
+    "als_32_alpha20": {
+      "ndcg_at_10": 0.06332640332794237,
+      "recall_at_10": 0.055635813071029,
+      "mrr_at_10": 0.1302586065547925,
+      "catalogue_coverage": 0.3443214009786248
+    },
+    "als_64_alpha20": {
+      "ndcg_at_10": 0.060142967455082644,
+      "recall_at_10": 0.05388439042324473,
+      "mrr_at_10": 0.12387148343644172,
+      "catalogue_coverage": 0.37393767705382436
+    },
+    "als_64_alpha40": {
+      "ndcg_at_10": 0.05478320604056072,
+      "recall_at_10": 0.05072574686118749,
+      "mrr_at_10": 0.11531829590530426,
+      "catalogue_coverage": 0.41205253669842906
+    }
+  },
+  "paired_ndcg_vs_popularity": {
+    "mean_difference": 0.012278709058890053,
+    "ci95_low": 0.009540277518611803,
+    "ci95_high": 0.015036079761354489,
+    "bootstrap_repetitions": 1000,
+    "scope": "Paired user resampling conditional on fitted models and this dataset"
+  },
+  "sampled_negative_diagnostic": {
+    "negatives_per_user": 100,
+    "metrics": {
+      "ndcg_at_10": 0.5451826009516464,
+      "recall_at_10": 0.4641535542578928,
+      "mrr_at_10": 0.6882321641409842
+    },
+    "scope": "Diagnostic protocol; not headline full-catalogue results"
+  },
+  "performance": {
+    "reference": {
+      "median_ms": 122.63749993871897,
+      "p95_ms": 123.87115358142182,
+      "raw_ms": [
+        124.29991597309709,
+        122.63749993871897,
+        122.42833303753287,
+        122.22754198592156,
+        122.68758402206004,
+        122.87070800084621,
+        122.34375008847564
+      ]
+    },
+    "optimized": {
+      "median_ms": 44.90145808085799,
+      "p95_ms": 45.00015809899196,
+      "raw_ms": [
+        45.018707984127104,
+        44.897499959915876,
+        44.90145808085799,
+        44.474959024228156,
+        44.956875033676624,
+        44.407041976228356,
+        44.907832983881235
+      ]
+    },
+    "queries": 1000,
+    "k": 10,
+    "batch_size": 64,
+    "repetitions": 7,
+    "cpu_threads": 2,
+    "top10_list_agreement": 1.0,
+    "maximum_finite_score_difference": 0.0,
+    "median_speedup": 2.7312587425975092,
+    "score_matrix_bytes_per_full_batch": 1988096,
+    "scope": "Warm-process 1000-user scoring and ranking workload; excludes loading, HTTP, and concurrent production traffic"
+  },
+  "fit_seconds": {
+    "popularity": 3.2919924706220627e-06,
+    "item_knn_50": 0.5407092500245199,
+    "item_knn_100": 0.5036183749325573,
+    "als_32_alpha20": 2.378950042068027,
+    "als_64_alpha20": 4.36466299998574,
+    "als_64_alpha40": 4.237183750024997
+  },
+  "als_objectives": {
+    "als_32_alpha20": [
+      9619656.908207837,
+      3328807.7093164655,
+      2086711.7141794832,
+      1959459.3442293387,
+      1911504.5898740396,
+      1885561.0708450212,
+      1869260.8338057944,
+      1858158.0129647828,
+      1850137.9786269204,
+      1844039.8820374345,
+      1839196.9854086828
+    ],
+    "als_64_alpha20": [
+      9619693.398203857,
+      2704106.509828984,
+      1798945.1307780333,
+      1670489.0920318966,
+      1613838.8315093238,
+      1581123.8732982166,
+      1559445.2488257505,
+      1543789.7036014483,
+      1531809.6948116692,
+      1522255.0055515713,
+      1514392.7025527551
+    ],
+    "als_64_alpha40": [
+      18781286.04794505,
+      4092672.811152369,
+      2476830.4045201982,
+      2253809.697275214,
+      2151620.823424122,
+      2090943.4435930564,
+      2049901.369901361,
+      2019893.1394401835,
+      1996770.5945561526,
+      1978259.1015595328,
+      1962997.9104664077
+    ]
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  }
+}

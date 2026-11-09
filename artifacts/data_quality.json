@@ -1,0 +1,22 @@
+{
+  "source_url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
+  "archive_sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+  "raw_ratings": 1000209,
+  "users": 6040,
+  "catalogue_items": 3883,
+  "rated_items": 3706,
+  "positive_threshold": 4,
+  "training_positive_events": 458078,
+  "training_seen_events": 766208,
+  "evaluated_users": 5034,
+  "users_excluded_from_ranking": 1006,
+  "validation_positive_events": 56372,
+  "test_positive_events": 60831,
+  "cold_item_validation_events": 35,
+  "cold_item_test_events": 66,
+  "train_supported_items": 3457,
+  "split": "Per-user positive timestamp 80/90 percentiles; ties assigned to the later block.",
+  "eligibility": "At least 20 positives and nonempty strict train/validation/test blocks, with >=5 training positives.",
+  "training_policy": "Ineligible users contribute all their positive feedback; eligible users contribute feedback before their validation cutoff.",
+  "limitation": "This is a transductive per-user temporal benchmark, not a global chronological deployment simulation."
+}
